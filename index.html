@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SplitMate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="container">
+      <h1>Welcome to SplitMate</h1>
+      <button onclick="createGroup()">Create New Group</button>
+    </div>
+
+    <div class="container">
+      <h3>Join Existing Group</h3>
+      <input id="join-code" placeholder="Enter Group Code" />
+      <button onclick="joinGroup()">Join Group</button>
+    </div>
+  </div>
+
+  <script>
+    function createGroup() {
+      const groupId = Math.random().toString(36).substr(2, 6); // e.g. 'abc123'
+      window.location.href = `group.html?id=${groupId}`;
+    }
+
+    function joinGroup() {
+      const code = document.getElementById("join-code").value.trim();
+      if (!code) {
+        alert("Please enter a group code");
+        return;
+      }
+      window.location.href = `group.html?id=${code}`;
+    }
+  </script>
+</body>
+</html>

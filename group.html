@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Group Expenses</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <h2>Group ID: <span id="group-id"></span></h2>
+    <p>Share this link: <span id="share-link"></span></p>
+
+    <hr />
+
+    <!-- Member Section -->
+    <h3>Add Members</h3>
+    <input id="memberName" placeholder="Enter member name" />
+    <button onclick="addMember()">Add Member</button>
+    <ul id="member-list"></ul>
+
+    <hr />
+
+    <!-- Expense Section -->
+    <h3>Add Expense</h3>
+    <select id="paidBy">
+      <option value="" disabled selected>Select who paid</option>
+    </select>
+    <input id="amount" type="number" placeholder="Amount" />
+    <input id="description" placeholder="Description" />
+
+    <h4>Split Between:</h4>
+    <div id="split-between" style="margin-bottom: 20px;"></div>
+
+    <button onclick="addExpense()">Add Expense</button>
+
+    <hr/>
+
+    <h3>Expenses</h3>
+    <ul id="expense-list"></ul>
+
+    <hr/>
+
+    <!-- ✅ Final Settlement Summary -->
+    <h3>Final Net Settlements</h3>
+    <ul id="settlement-summary"></ul>
+  </div>
+
+  <script type="module" src="group-script.js"></script>
+</body>
+</html>
