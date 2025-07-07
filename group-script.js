@@ -4,7 +4,7 @@ import {
   getFirestore, doc, getDoc, setDoc, updateDoc, arrayUnion, onSnapshot
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// 🔧 Firebase config
+//  Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyD5v1hQyRFBPJ0-w-YczdmX5o6o_Gvyb1g",
   authDomain: "splitmate-6bde9.firebaseapp.com",
