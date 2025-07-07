@@ -8,15 +8,16 @@ body {
   justify-content: center;
 }
 
-.share-link {
-  color: #007bff;          
-  text-decoration: none;  
+#share-link a {
+  color: #1a73e8;
+  text-decoration: none;
   font-weight: 500;
 }
 
-.share-link:hover {
+#share-link a:hover {
   text-decoration: underline;
-  color: #0056b3;
+  color: #1a73e8;
+  
 }
 
 

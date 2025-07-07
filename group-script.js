@@ -22,7 +22,17 @@ const urlParams = new URLSearchParams(window.location.search);
 const groupId = urlParams.get('id');
 document.getElementById("group-id").textContent = groupId;
 const shareURL = window.location.href;
-document.getElementById("share-link").innerHTML = `<a href="${shareURL}" target="_blank">${shareURL}</a>`;
+document.getElementById("share-link").innerHTML = `<a href="${shareURL}" target="_blank" id="share-link-anchor">${shareURL}</a>`;
+
+document.getElementById("copy-btn").onclick = () => {
+  navigator.clipboard.writeText(shareURL)
+    .then(() => {
+      const btn = document.getElementById("copy-btn");
+      btn.textContent = "✅";
+      setTimeout(() => btn.textContent = "📋", 1500);
+    })
+    .catch(() => alert("Failed to copy link"));
+};
 
 
 const groupRef = doc(db, "groups", groupId);
