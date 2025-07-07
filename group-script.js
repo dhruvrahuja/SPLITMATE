@@ -21,7 +21,9 @@ const db = getFirestore(app);
 const urlParams = new URLSearchParams(window.location.search);
 const groupId = urlParams.get('id');
 document.getElementById("group-id").textContent = groupId;
-document.getElementById("share-link").textContent = window.location.href;
+const shareURL = window.location.href;
+document.getElementById("share-link").innerHTML = `<a href="${shareURL}" target="_blank">${shareURL}</a>`;
+
 
 const groupRef = doc(db, "groups", groupId);
 
